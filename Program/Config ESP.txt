@@ -1,0 +1,37 @@
+Relé = D8;
+DHT11 = D4;
+
+API:
+Contiene todas las funciones de comunicación con la API,
+el código python de la raspberry, además de la función que guarda
+variables en la Eprom y la que extrae los valores de las variables
+del archivo JSON.
+
+ServerDB
+Contiene la función horatemp que actualiza los valores de temperatura
+humedad, además de construir el String que se envía a la 
+página y también decide si el LED o RELÉ debe estar encendido o no.
+
+Contiene también las funciones para manejar los formularios,
+para pasar sus variables al esp y su memoria y Json.
+
+Tiene también las fuciones de servidor web con y sin conexión, 
+dando una página en cada caso, en modo sin conexión(InitAP) te da una
+página con las redes disponibles.
+
+En el modo con conexión(Initserver) se encuentran los envíos 
+a los endpoints, se mandan las variables correspondientes, 
+también se reciben de los formularios.
+
+ESP8266 UTILS
+Aquí estan las funciones de conexión wifi y AP además de una función
+"leerserver"que es la que lee la última conexión del Json server.
+
+Sketch principal
+Contiene algunas funciones para formatear las variables de forma
+correcta y define los pines, pero por lo general incializa los 
+sensores el servidor y el led, el cliente horario y el sevidor web.
+
+en el loop ordena la ejecución de las funciones
+y hace algunas verificaciones
+ 
